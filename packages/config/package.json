@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/stuf/homedata-etm12/issues"
   },
-  "homepage": "https://github.com/stuf/homedata-etm12#readme"
+  "homepage": "https://github.com/stuf/homedata-etm12#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
 }
