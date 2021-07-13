@@ -2,13 +2,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('measurements', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER,
-      },
-      timestamp: { type: Sequelize.DATE, allowNull: false },
+      time: { type: Sequelize.DATE, allowNull: false },
       source: { type: Sequelize.MACADDR },
       sequenceNumber: { type: Sequelize.INTEGER },
       rssi: { type: Sequelize.FLOAT },

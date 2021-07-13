@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   measurements.init(
     {
-      timestamp: DataTypes.DATE,
+      time: DataTypes.DATE,
       source: DataTypes.MACADDR,
       sequenceNumber: DataTypes.INTEGER,
       rssi: DataTypes.FLOAT,

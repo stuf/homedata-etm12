@@ -1,5 +1,5 @@
 {
-  "name": "database",
+  "name": "@etm12/database",
   "version": "0.0.0",
   "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
   "keywords": [],
@@ -14,9 +14,14 @@
     "lib"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "db:create": "sequelize db:create",
+    "db:migrate": "sequelize db:migrate",
+    "db:seed": "sequelize db:seed:all",
+    "db:bootstrap": "yarn db:create && yarn db:migrate && yarn db:seed"
   },
   "dependencies": {
+    "@etm12/config": "^0.0.0",
     "@types/sequelize": "^4.28.10",
     "dotenv": "^10.0.0",
     "pg": "^8.6.0",
