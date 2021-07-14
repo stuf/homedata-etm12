@@ -1,0 +1,4 @@
+POST http://localhost:9090/measurements
+Content-Type: application/json
+
+{"time":"2021-07-14T12:31:55.889Z","source":"F2:0B:12:DD:BD:D9","sequenceNumber":35451,"rssi":-85,"tsPower":4,"battery":2923,"temperature":27.13,"humidity":41.125,"pressure":101195,"accelerationX":908,"accelerationY":496,"accelerationZ":-16,"createdAt":"2021-07-14T12:31:55.889Z","updatedAt":"2021-07-14T12:31:55.889Z"}
