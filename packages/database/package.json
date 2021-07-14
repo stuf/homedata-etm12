@@ -7,6 +7,7 @@
   "license": "ISC",
   "main": "lib/index.js",
   "directories": {
+    "models": "models",
     "lib": "lib",
     "test": "__tests__"
   },
