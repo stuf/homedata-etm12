@@ -7,4 +7,8 @@ out.db = {
   host: null,
 };
 
+out.api = {
+  port: 3210,
+};
+
 module.exports = out;
