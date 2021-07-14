@@ -1,0 +1,27 @@
+{
+  "name": "@etm12/collector",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Stefan Rimaila <stefan@rimaila.fi>",
+  "license": "ISC",
+  "main": "lib/collector.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stuf/homedata-etm12.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/stuf/homedata-etm12/issues"
+  },
+  "homepage": "https://github.com/stuf/homedata-etm12#readme"
+}
