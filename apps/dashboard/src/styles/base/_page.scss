@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '../settings/_index' as S;
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root,
+.App {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: map.get(S.$colors, 'prussian-blue');
+  color: map.get(S.$colors, 'white');
+}
