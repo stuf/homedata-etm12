@@ -6,7 +6,7 @@ const { log } = require('./logger');
 let i = 0;
 let ts = { start: new Date(), now: new Date() };
 
-const logEvery = 5;
+const logEvery = 50;
 
 /**
  * @param {RuuviTag} tag
