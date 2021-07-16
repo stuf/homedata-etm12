@@ -65,7 +65,9 @@ function onUpdated(data) {
         log(
           'info',
           'collector',
-          `processed ${i} measurements; avg ${avgRate} per sec`,
+          `processed ${i} measurements; avg ${avgRate.toFixed(
+            2,
+          )} broadcasts/sec`,
         );
       }
     })
