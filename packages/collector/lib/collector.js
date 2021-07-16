@@ -4,6 +4,7 @@ const { client } = require('./client');
 const { log } = require('./logger');
 
 let i = 0;
+let ts = { start: new Date(), now: new Date() };
 
 const logEvery = 5;
 
@@ -56,10 +57,16 @@ function onUpdated(data) {
     .post('/measurements', o)
     .then(() => {
       ++i;
+      ts.now = new Date();
 
       if (i % logEvery === 0) {
-        log('info', 'collector', `processed ${i} measurements`);
-        // console.log('%s: wrote datapoint from %s', new Date(), data.mac),
+        const timeDelta = (ts.now - ts.start) / 1000;
+        const avgRate = i / timeDelta;
+        log(
+          'info',
+          'collector',
+          `processed ${i} measurements; avg ${avgRate} per sec`,
+        );
       }
     })
     .catch(console.error);
