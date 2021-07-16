@@ -1,0 +1,13 @@
+[Unit]
+Description=ETM12 Homedata Collector
+Documentation=https://github.com/stuf/homedata-etm12
+After=network.target
+
+[Service]
+Type=simple
+User=homedata
+ExecStart=/usr/bin/bash -c "/home/homedata/.bin/homedata-collector.sh"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

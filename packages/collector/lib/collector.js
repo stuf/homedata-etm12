@@ -1,11 +1,17 @@
 const ruuvi = require('node-ruuvitag');
+
 const { client } = require('./client');
+const { log } = require('./logger');
+
+let i = 0;
+
+const logEvery = 5;
 
 /**
  * @param {RuuviTag} tag
  */
 function onFound(tag) {
-  console.log('tag discovered %s', tag.address);
+  log('info', 'collector', `new tag discovered; id = ${tag.id}`);
   tag.on('updated', onUpdated);
 }
 
@@ -48,14 +54,34 @@ function onUpdated(data) {
 
   client
     .post('/measurements', o)
-    .then(() =>
-      console.log('%s: wrote datapoint from %s', new Date(), data.mac),
-    )
+    .then(() => {
+      ++i;
+
+      if (i % logEvery === 0) {
+        log('info', 'collector', `processed ${i} measurements`);
+        // console.log('%s: wrote datapoint from %s', new Date(), data.mac),
+      }
+    })
     .catch(console.error);
 }
 
-console.log('waiting for tag discovery');
+log('info', 'collector', 'waiting for tag discovery');
 ruuvi.on('found', onFound);
+
+process.on('exit', code => {
+  log('info', 'collector', `process exited with code ${code}`);
+  log('info', 'collector', '--------------------------------------');
+});
+
+process.on('SIGINT', e => {
+  log('info', 'collector', 'process interrupted');
+  process.exit(2);
+});
+
+process.on('uncaughtException', e => {
+  log('error', 'collector', 'caugh unhandled exception');
+  e.stack.split('\n').forEach(line => log('error', 'collector', line));
+});
 
 //
 

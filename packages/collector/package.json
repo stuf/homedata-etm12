@@ -1,6 +1,6 @@
 {
   "name": "@etm12/collector",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "keywords": [],
   "author": "Stefan Rimaila <stefan@rimaila.fi>",
@@ -31,6 +31,7 @@
     "@etm12/config": "^0.0.0",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
+    "mkdirp": "^1.0.4",
     "node-ruuvitag": "^4.6.1"
   }
 }
