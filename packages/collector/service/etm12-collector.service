@@ -6,7 +6,7 @@ After=network.target
 [Service]
 Type=simple
 User=homedata
-ExecStart=/usr/bin/bash -c "/home/homedata/.bin/homedata-collector.sh"
+ExecStart=/home/homedata/.etm12/bin/collector.js
 Restart=on-failure
 
 [Install]
